@@ -1,2 +1,3 @@
 <?php
+$obj = new main();
 ?>
