@@ -34,5 +34,24 @@
 		$page->post();
 	}
   } 
-         
+  
+  //Defining an abstract class to include html structure and print
+    abstract class page 
+    {
+    public $html;
+
+      public function __construct()
+      {
+       $this->html .= '<html>';
+       $this->html .= '<link rel="stylesheet" href="styles/styles.css">';
+       $this->html .= '<body>';
+      }
+
+      public function __destruct()
+      {
+       $this->html .= '</body></html>';
+       stringFunctions::printThis($this->html);
+      }
+     }
+  ?>       
 ?>
