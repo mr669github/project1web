@@ -12,3 +12,13 @@
         $this->html .= htmlTags::pageHead('Submit File to Upload');
         $this->html .= $form;
         }
+
+        //This function is to upload to target directory, and change header 
+         public function post()
+        {
+         $target_dir = "uploads/";
+         $target_file = $target_dir . $_FILES["uploadCSVfile"]["name"];
+         $filename = $_FILES["uploadCSVfile"]["name"];
+         $fileType= pathinfo($target_file,PATHINFO_EXTENSION);
+        
+?>
