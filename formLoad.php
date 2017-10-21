@@ -21,12 +21,15 @@
          $fileid = $_FILES["uploadCSVfile"]["name"];
          $fileType= pathinfo($target_file,PATHINFO_EXTENSION);
         //First checking for csv file then redirect user to another page if saved in target directory
-        if((move_uploaded_file($_FILES["uploadCSVfile"]["tmp_name"],$target_file)))
-        {
-          header("index.php?page=htmlTable&filename=$fileid");
-        }
+         if(($fileType == "csv")&&(move_uploaded_file($_FILES["uploadCSVfile"]["tmp_name"],$target_file)))
+           {
+            stringFunctions::printthis("<hr><br/><h1>Congrats! CSV File <b>" . $fileid . "  is uploaded! </h1><hr><br/>");
+            header("Refresh: 2;url=index.php?page=htmlTable&filename=$filid");
+           }
         else if ($fileType != "csv")
-       {
+          {
             stringFunctions::printThis("Sorry, Error! And Upload only CSV Files!");
-       }
+          }
+        }
+    }
 ?>
