@@ -1,0 +1,7 @@
+
+//adding additional styles, not necessary.
+tr:hover{ background-color: #f0f0f0 }
+tr:nth-child(even) { background-color: #f0f0f0;  }
+tr:nth-child(odd) { background-color: #FFF;   }
+
+
