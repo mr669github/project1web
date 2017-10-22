@@ -21,7 +21,7 @@
   {
   	public function __construct()
 	{
-		$reqPage= 'formUpload';
+		$reqPage= 'formLoad';
 		if(isset($_REQUEST['page']))
 		{
 		$reqPage = $_REQUEST['page'];
@@ -52,6 +52,5 @@
        $this->html .= '</body></html>';
        stringFunctions::printThis($this->html);
       }
-     }
-  ?>       
+     }       
 ?>
